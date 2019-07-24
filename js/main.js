@@ -32,3 +32,25 @@ pizza.prototype.freshcost = function(){
     });
     this.cost = cost;
 }
+
+function order(name, phone, address, payment){
+    this.name = name;
+    this.phone = phone;
+    this.address = address;
+    this.payment = payment;
+    this.pizza1 = [];
+}
+order.prototype.addpizza = function (pizza){
+    pizza.freshcost();
+    this.pizza1.push(pizza);
+};
+order.prototype.remove = function (pizzano){
+    this.pizza1.splice(pizzano -1);
+}
+order.prototype.Totalcost = function(){
+    var totalCost = 0;
+    this.pizzas.forEach(function (pizza) {
+      totalCost += pizza.cost;
+    });
+    this.totalcost += totalcost
+}
