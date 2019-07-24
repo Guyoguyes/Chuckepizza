@@ -44,16 +44,79 @@
             <button class="submit">Submit</button>
         </div>
 
-        <div class="pizza-order">
-            
-            <select name="pizza-size" id="size">Size</select>
+            <div class="col-md-4">
+                <select class="form-control size">
+                        <option label="Small" value="500">Small</option>
+                        <option label="Medium" value="700">Medium</option>
+                        <option label="Large" value="1000">Large</option>
+                      </select>
+            </div>
+        </br>
+            <div class="col-md-4">
+                <select class="form-control toppings">
+                        <option label="Olives" value="100">Olives</option>
+                        <option label="Cheese" value="50">Cheese</option>
+                        <option label="Pepperoni" value="80">Pepperoni</option>
+                </select>
+            </div>
+        </br>
+            <div class="col-md-4">
+                <select class="form-control crust">
+                        <option label="Stuffed" value="500">Stuffed</option>
+                        <option label="Gluten-Free" value="200">Gluten-Free</option>
+                        <option label="Crispy" value="300">Crispy</option>
+                      </select>
         </div>
+    </br>
+
+
+    <div class="text-center">
+            <button class="btn  order" type="submit">Order</button>
+          </div>
+
+
+          <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Order No.</th>
+                    <th scope="col">Pizza Size</th>
+                    <th scope="col">Toppings</th>
+                    <th scope="col">Crust</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
+                <tbody id="pizza">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td id="size"></td>
+                    <td id="toppings"></td>
+                    <td id="crust"></td>
+                    <td id="total"></td>
+                  </tr>
+                </tbody>
+              </table>
 
 
 
 
-
-
+              <div class="additional-buttons">
+                    <div class="text-center">
+                      <button class="btn  add-pizza" type="submit">Add Another</button>
+                      <div class="additional-info">
+                        <h3>The total is: <span></span></h3>
+                        <h5>Would you like delivery for an additional <em>200</em>?</h5>
+                        
+                          <button class="btn  complete" type="submit">Complete</button>
+                        
+                      </div>
+                      <br>
+                      <button class="btn  yes" type="submit">Yes</button>
+                      <button class="btn  no" type="submit">No</button>
+                    </div>
+                    <div class="text-right">
+                      <button class="btn  check-out" type="submit">Checkout</button>
+                    </div>
+                  </div>
 
     </div>
 </div>
