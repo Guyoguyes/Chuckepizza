@@ -5,13 +5,37 @@ function pizza(size, crust, topping){
     this.crust = crust;
     this.topping = topping;
 }
+// topping
+pizza.prototype.addOlive = function(olive){
+    this.topping.push(olive);
+}
+pizza.prototype.addBacon = function(bacon){
+    this.topping.push(bacon);
+}
+pizza.prototype.addChees = function(chees){
+    this.topping.push(chees);
+}
+pizza.prototype.addBeef = function(beef){
+    this.topping.push(beef)
+}
+pizza.prototype.addChicken = function(chicken){
+    this.topping.push(chicken)
+}
 
-pizza.prototype.addMeat = function(meat){
-    this.topping.push(meat);
+// crust
+pizza.prototype.addStuffed = function(stuffed){
+    this.crust.push(stuffed);
 }
-pizza.prototype.addVeg = function(veg){
-    this.topping.push(veg);
+pizza.prototype.addGulten = function(gulten){
+    this.crust.push(gulten);
 }
+pizza.prototype.addCrispy = function(crispy){
+    this.crust.push(crispy);
+}
+
+// calculating cost
+
+
 pizza.prototype.freshcost = function(){
     var cost = 0;
 
@@ -24,14 +48,33 @@ pizza.prototype.freshcost = function(){
     }else if (this.pizza === "extralarge"){
         cost = 1200;
     }
-    this.topping.meat(function(){
+    this.topping.olive(function(){
+        cost += 80;
+    });
+    this.topping.bacon(function(){
+        cost += 100;
+    });
+    this.topping.chees(function(){
+        cost += 120;
+    });
+    this.topping.beef(function(){
+        cost += 150;
+    });
+    this.topping.chicken(function(){
         cost += 200;
     });
-    this.topping.veg(function(){
-        cost += 100;
+    this.crust.stuffed(function(){
+        cost += 500;
+    });
+    this.crust.gulten(function(){
+        cost += 200;
+    });
+    this.crust.crispy(function(){
+        cost += 300;
     });
     this.cost = cost;
 }
+
 
 function order(name, phone, address, payment){
     this.name = name;
