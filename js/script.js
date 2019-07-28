@@ -2,13 +2,13 @@
 // // Business logic
 // var totalOrderPrice = [];
 
-// function Placeorder(size, crust, topping) {
-//   this.size = size;
-//   this.crust = crust;
-//   this.topping = topping;
-//   this.price = 0;
+function Placeorder(size, crust, topping) {
+  this.size = size;
+  this.crust = crust;
+  this.topping = topping;
+  this.price = 0;
  
-// }
+}
 
 // var pizzaSize = ["Small", "Medium", "Large"];
 // var pizzaCrust = ["Crispy", "Stuffed", "Gluten-free"];
