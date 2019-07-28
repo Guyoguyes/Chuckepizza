@@ -1,6 +1,6 @@
 
 // // Business logic
-// var totalOrderPrice = [];
+var totalOrderPrice = [];
 
 function Placeorder(size, crust, topping) {
   this.size = size;
@@ -10,36 +10,36 @@ function Placeorder(size, crust, topping) {
  
 }
 
-// var pizzaSize = ["Small", "Medium", "Large"];
-// var pizzaCrust = ["Crispy", "Stuffed", "Gluten-free"];
-// var pizzaTopping = ["Bacon", "Chicken", "Beef", "Vegetables"];
+var pizzaSize = ["Small", "Medium", "Large"];
+var pizzaCrust = ["Crispy", "Stuffed", "Gluten-free"];
+var pizzaTopping = ["Bacon", "Chicken", "Beef", "Vegetables"];
 
-// Placeorder.prototype.costOfPizza = function() {
-//   if (this.size === pizzaSize[0]) {
-//     this.price += 500;
-//   } else if (this.size === pizzaSize[1]) {
-//     this.price += 750;
-//   } else if (this.size === pizzaSize[2]) {
-//     this.price += 1000;
-//   }
-//   if (this.crust === pizzaCrust[0]) {
-//     this.price += 100;
-//   } else if (this.cheese === pizzaCrust[1]) {
-//     this.price += 200;
-//   } else if (this.cheese === pizzaCrust[2]) {
-//     this.price += 300;
-//   }
-//   if (this.topping === pizzaTopping[0]) {
-//     this.price += 100;
-//   } else if (this.topping === pizzaTopping[1]) {
-//     this.price += 200;
-//   } else if (this.topping === pizzaTopping[2]) {
-//     this.price += 300;
-//   } else if (this.topping === pizzaTopping[3]) {
-//     this.price += 50;
-//   }
-//   return this.price;
-// }
+Placeorder.prototype.costOfPizza = function() {
+  if (this.size === pizzaSize[0]) {
+    this.price += 500;
+  } else if (this.size === pizzaSize[1]) {
+    this.price += 750;
+  } else if (this.size === pizzaSize[2]) {
+    this.price += 1000;
+  }
+  if (this.crust === pizzaCrust[0]) {
+    this.price += 100;
+  } else if (this.cheese === pizzaCrust[1]) {
+    this.price += 200;
+  } else if (this.cheese === pizzaCrust[2]) {
+    this.price += 300;
+  }
+  if (this.topping === pizzaTopping[0]) {
+    this.price += 100;
+  } else if (this.topping === pizzaTopping[1]) {
+    this.price += 200;
+  } else if (this.topping === pizzaTopping[2]) {
+    this.price += 300;
+  } else if (this.topping === pizzaTopping[3]) {
+    this.price += 50;
+  }
+  return this.price;
+}
 
 
 
