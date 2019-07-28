@@ -66,5 +66,35 @@ body{
 }
 .submit-btn{
     margin-top: 100px;
-    margin-left: -450px;
+   margin-left: 400px;
+}
+
+#customized-pizza select{
+   width: 200px;
+   padding: 20px;
+   background-color: transparent;
+}
+#customize-pizza option{
+    background-color: transparent;
+}
+.form-group{
+    width: 800px;
+
+}
+.form-option{
+    padding: 20px;
+}
+.table{
+    width: 100%;
+    margin-top: 50px;
+}
+.type p{
+    padding-left: 500px;
+}
+#reload{
+    text-align: right;
+    margin-left: 400px;
+}
+#place-order{
+    margin-top: 50px;
 }

@@ -8,6 +8,7 @@ function Placeorder(size, crust, topping) {
   this.topping = topping;
   this.price = 0;
  
+  // return Placeorder();
 }
 
 var pizzaSize = ["Small", "Medium", "Large"];
@@ -24,9 +25,9 @@ Placeorder.prototype.costOfPizza = function() {
   }
   if (this.crust === pizzaCrust[0]) {
     this.price += 100;
-  } else if (this.cheese === pizzaCrust[1]) {
+  } else if (this.crust === pizzaCrust[1]) {
     this.price += 200;
-  } else if (this.cheese === pizzaCrust[2]) {
+  } else if (this.crust === pizzaCrust[2]) {
     this.price += 300;
   }
   if (this.topping === pizzaTopping[0]) {
@@ -65,11 +66,13 @@ function ShippingAddress(cityName, cityAvenueName, cityStreetName, nameOfBuildin
   this.deliveryAddress = (cityStreetName + " : \n" + cityAvenueName + " : \n" + nameOfBuilding + " : \n");
 }
 
-// // User interface
-// $(document).ready(function() {
-//   $(".submit-btn").click(function() {
-//     $(".contacts").hide(2000);
-//   });
+// User interface
+$(document).ready(function() {
+  $(".submit-btn").click(function() {
+    $(".contacts").toggle(2000);
+    
+  });
+  $(".additional-info").hide();
  
   
 
@@ -100,8 +103,16 @@ function ShippingAddress(cityName, cityAvenueName, cityStreetName, nameOfBuildin
 
       $("#pizza").append(newRow);
   });
-  $("#checkout-btn").click(function() {
+  $("#checkout-btn").click(function(event) {
+    event.preventDefault();
+    // location.reload(); 
+    $(".additional-info").show();
+    $(".additional-info h3 span").html(newPizzaOrder.totalCost());
+    
+  });
+  $("#reload").click(function(){
     location.reload();
   });
-  
 
+  
+});
