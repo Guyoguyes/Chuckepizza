@@ -1,3 +1,29 @@
+@media only screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+    }
+  
+    
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .container {
+      width: 95%;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .container {
+      width: 70%;
+    }
+  }
+
 body{
     background-image: url("img/background/photo-1460134583608-5f5d1dd1d61c.jpeg");
     background-size: cover;
@@ -16,4 +42,29 @@ body{
     text-align: center;
     padding-left:250px;
     font-size: 25px;
+}
+.page-header{
+    text-align: center;
+    padding-left: 300px;
+    margin-top: -70px;
+}
+.contacts{
+    margin: 5px;
+}
+#forms label{
+    font-size: 28px;
+    padding-top: -100px
+
+}
+#form{
+    border: 1px solid;
+    height: 40px;
+    display: block;
+    width: 500px;
+    background-color: antiquewhite;
+
+}
+.submit-btn{
+    margin-top: 100px;
+    margin-left: -450px;
 }
