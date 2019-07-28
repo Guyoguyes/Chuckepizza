@@ -45,25 +45,25 @@ Placeorder.prototype.costOfPizza = function() {
 
 
 
-// Placeorder.prototype.totalCost = function() {
+Placeorder.prototype.totalCost = function() {
  
-//   var shoppingCartTotal = 0;
+  var shoppingCartTotal = 0;
   
-//   for (var order = 0; order < totalOrderPrice.length; order++) {
+  for (var order = 0; order < totalOrderPrice.length; order++) {
   
-//     shoppingCartTotal += totalOrderPrice[order];
-//   }
-//   return shoppingCartTotal;
-// }
+    shoppingCartTotal += totalOrderPrice[order];
+  }
+  return shoppingCartTotal;
+}
 
-// function ShippingAddress(cityName, cityAvenueName, cityStreetName, nameOfBuilding, phoneNumber) {
-//   this.cityName = cityName;
-//   this.cityAvenueName = cityAvenueName;
-//   this.CityStreetName = cityStreetName;
-//   this.nameOfBuilding = nameOfBuilding;
-//   this.phoneNumber = phoneNumber;
-//   this.deliveryAddress = (cityStreetName + " : \n" + cityAvenueName + " : \n" + nameOfBuilding + " : \n");
-// }
+function ShippingAddress(cityName, cityAvenueName, cityStreetName, nameOfBuilding, phoneNumber) {
+  this.cityName = cityName;
+  this.cityAvenueName = cityAvenueName;
+  this.CityStreetName = cityStreetName;
+  this.nameOfBuilding = nameOfBuilding;
+  this.phoneNumber = phoneNumber;
+  this.deliveryAddress = (cityStreetName + " : \n" + cityAvenueName + " : \n" + nameOfBuilding + " : \n");
+}
 
 // // User interface
 // $(document).ready(function() {
