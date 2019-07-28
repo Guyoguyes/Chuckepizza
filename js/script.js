@@ -96,12 +96,12 @@ function ShippingAddress(cityName, cityAvenueName, cityStreetName, nameOfBuildin
     $("#pizza-topping").append("\t" + "\t" + customtopping);
     $("#final-cost").text("\t" + "\t" + newPizzaOrder.totalCost());
     
-    // var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $("#pizza-size").text() + " - " + customSize + '</td><td id="crust">' + $("#pizza-crust").text() + " - " + customcrust + '</td><td id="topping">' + $("#pizza-topping").text() + " - " + customtopping + '</td><td id="final-cost">' + $("#final-cost").text()+" - "+ newPizzaOrder.totalCost() + '</td></tr>'
+    var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $("#pizza-size").text() + " - " + customSize + '</td><td id="crust">' + $("#pizza-crust").text() + " - " + customcrust + '</td><td id="topping">' + $("#pizza-topping").text() + " - " + customtopping + '</td><td id="final-cost">' + $("#final-cost").text()+" - "+ newPizzaOrder.totalCost() + '</td></tr>'
 
-    //   $("#pizza").append(newRow);
+      $("#pizza").append(newRow);
   });
   $("#checkout-btn").click(function() {
     location.reload();
   });
-  });
+  
 
