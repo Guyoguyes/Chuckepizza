@@ -1,99 +1,100 @@
-// create pizza constructor
+var totalOrderPrice = [];
+//------Constructor Placeorder created with it's properties----//
+function Placeorder(size, crust, topping) {
+  this.size = size;
+  this.crust = crust;
+  this.topping = topping;
+  this.price = 0;
+  // this.deliveryFee = 200;
+}
+//--Arrays to declare the pizzaSize,pizzaCrust and pizzaTopping to be used in the prototype CostOfPizza--//
+var pizzaSize = ["Small", "Medium", "Large"];
+var pizzaCrust = ["Crispy", "Stuffed", "Gluten-free"];
+var pizzaTopping = ["Bacon", "Chicken", "Beef", "Vegetables"];
+//-Prototype CostOfPizza created to determine the price based on the three properties i.e size,cheese,topping-//
+Placeorder.prototype.costOfPizza = function() {
+  if (this.size === pizzaSize[0]) {
+    this.price += 300;
+  } else if (this.size === pizzaSize[1]) {
+    this.price += 400;
+  } else if (this.size === pizzaSize[2]) {
+    this.price += 500;
+  }
+  if (this.crust === pizzaCrust[0]) {
+    this.price += 100;
+  } else if (this.cheese === pizzaCrust[1]) {
+    this.price += 200;
+  } else if (this.cheese === pizzaCrust[2]) {
+    this.price += 300;
+  }
+  if (this.topping === pizzaTopping[0]) {
+    this.price += 100;
+  } else if (this.topping === pizzaTopping[1]) {
+    this.price += 200;
+  } else if (this.topping === pizzaTopping[2]) {
+    this.price += 300;
+  } else if (this.topping === pizzaTopping[3]) {
+    this.price += 50;
+  }
+  return this.price;
+}
+//----End Of the Prototype CostOfPizza---//
 
-function pizza(size, crust, topping){
-    this.size = size;
-    this.crust = crust;
-    this.topping = topping;
-}
-// topping
-pizza.prototype.addOlive = function(olive){
-    this.topping.push(olive);
-}
-pizza.prototype.addBacon = function(bacon){
-    this.topping.push(bacon);
-}
-pizza.prototype.addChees = function(chees){
-    this.topping.push(chees);
-}
-pizza.prototype.addBeef = function(beef){
-    this.topping.push(beef)
-}
-pizza.prototype.addChicken = function(chicken){
-    this.topping.push(chicken)
-}
-
-// crust
-pizza.prototype.addStuffed = function(stuffed){
-    this.crust.push(stuffed);
-}
-pizza.prototype.addGulten = function(gulten){
-    this.crust.push(gulten);
-}
-pizza.prototype.addCrispy = function(crispy){
-    this.crust.push(crispy);
-}
-
-// calculating cost
-
-
-pizza.prototype.freshcost = function(){
-    var cost = 0;
-
-    if(this.pizza === "small"){
-        cost = 500;
-    }else if (this.pizza === "medium"){
-        cost = 750;
-    }else if (this.pizza === "large"){
-        cost = 1000;
-    }else if (this.pizza === "extralarge"){
-        cost = 1200;
-    }
-    this.topping.olive(function(){
-        cost += 80;
-    });
-    this.topping.bacon(function(){
-        cost += 100;
-    });
-    this.topping.chees(function(){
-        cost += 120;
-    });
-    this.topping.beef(function(){
-        cost += 150;
-    });
-    this.topping.chicken(function(){
-        cost += 200;
-    });
-    this.crust.stuffed(function(){
-        cost += 500;
-    });
-    this.crust.gulten(function(){
-        cost += 200;
-    });
-    this.crust.crispy(function(){
-        cost += 300;
-    });
-    this.cost = cost;
+Placeorder.prototype.costOfDelivery = function() {
+  return this.deliveryFee;
 }
 
+//---Creation of prototype totalCost to be used to compute the total cost of all the orders--//
+Placeorder.prototype.totalCost = function() {
+  //created a variable shoppingCartTotal and initialized it to zero
+  var shoppingCartTotal = 0;
+  //this for loop iterates through the total order(s) to determine the number of order(s)
+  for (var order = 0; order < totalOrderPrice.length; order++) {
+    //shoppingCartTotal is now assigned a new value after the order(s) is added
+    shoppingCartTotal += totalOrderPrice[order];
+  }
+  return shoppingCartTotal;
+}
+//----End Of the Prototype totalCost---//
 
-function order(name, phone, address, payment){
-    this.name = name;
-    this.phone = phone;
-    this.address = address;
-    this.payment = payment;
-    this.pizza1 = [];
+//---Created and object called ShippingAddress---//
+function ShippingAddress(cityName, cityAvenueName, cityStreetName, nameOfBuilding, phoneNumber) {
+  this.cityName = cityName;
+  this.cityAvenueName = cityAvenueName;
+  this.CityStreetName = cityStreetName;
+  this.nameOfBuilding = nameOfBuilding;
+  this.phoneNumber = phoneNumber;
+  this.deliveryAddress = (cityStreetName + " : \n" + cityAvenueName + " : \n" + nameOfBuilding + " : \n");
 }
-order.prototype.addpizza = function (pizza){
-    pizza.freshcost();
-    this.pizza1.push(pizza);
-};
-order.prototype.remove = function (pizzano){
-    this.pizza1.splice(pizzano -1);
-}
-order.prototype.Totalcost = function(){
-    var totalCost = 0;
-    this.pizzas.forEach(function (pizza) {
-      totalCost += pizza.cost;
-    });
-    this.totalcost += totalcost
-}
+//----End Of the Constructor ShippingAddress---//
+
+//--------------------------- END OF BUSINESS LOGIC DESIGNED AND TESTED------------------------//
+//-------------------------------------USER INTERFACE LOGIC------------------------------------//
+$(document).ready(function() {
+  $("form#customized-pizza").submit(function(event) {
+    event.preventDefault();
+    var customSize = $("select#size").val();
+    var customcrust = $("select#crust").val();
+    var customtopping = $("input#topping").val();
+    var newPizzaOrder = new Placeorder(customSize, customcrust, customtopping);
+    newPizzaOrder.costOfPizza();
+    totalOrderPrice.push(newPizzaOrder.price);
+    $("#pizza-size").show();
+    $("#pizza-crust").show();
+    $("#pizza-topping").show();
+    $("#pizza-size").append("\t" + "\t" + customSize);
+    $("#pizza-crust").append("\t" + "\t" + customcrust);
+    $("#pizza-topping").append("\t" + "\t" + customtopping);
+    $("#final-cost").text("\t" + "\t" + newPizzaOrder.totalCost());
+
+    var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $("#pizza-size").text() + " - " + customSize + '</td><td id="crust">' + $("#pizza-crust").text() + " - " + customcrust + '</td><td id="topping">' + $("#pizza-topping").text() + " - " + customtopping + '</td><td id="final-cost">' + $("#final-cost").text()+" - "+ newPizzaOrder.totalCost() + '</td></tr>'
+  });
+  $("#checkout-btn").click(function() {
+    location.reload();
+  });
+});
+$(document).ready(function() {
+  $("#delivery-btn").click(function() {
+    $("#address-form").fadeIn();
+  });
+});
