@@ -70,7 +70,7 @@ body{
 }
 
 #customized-pizza select{
-   width: 200px;
+   width: 250px;
    padding: 20px;
    background-color: transparent;
 }
@@ -88,8 +88,10 @@ body{
     width: 100%;
     margin-top: 50px;
 }
-.type p{
-    padding-left: 500px;
+#customized-pizza p{
+    font-size: 20px;
+    font-style: oblique;
+    padding-left: 50px;
 }
 #reload{
     text-align: right;
