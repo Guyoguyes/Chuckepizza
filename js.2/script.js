@@ -57,7 +57,7 @@ Placeorder.prototype.totalCost = function() {
   return shoppingCartTotal;
 }
 
-function ShippingAddress(cityName, cityAvenueName, cityStreetName, nameOfBuilding, phoneNumber) {
+function DeliveryAddress(cityName, cityAvenueName, cityStreetName, nameOfBuilding, phoneNumber) {
   this.cityName = cityName;
   this.cityAvenueName = cityAvenueName;
   this.CityStreetName = cityStreetName;
