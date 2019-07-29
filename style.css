@@ -52,7 +52,7 @@ body{
     margin: 5px;
 }
 #forms label{
-    font-size: 28px;
+    font-size: 24px;
     padding-top: -100px
 
 }
@@ -60,7 +60,7 @@ body{
     border: 1px solid;
     height: 40px;
     display: block;
-    width: 500px;
+    width: 300px;
     background-color: antiquewhite;
 
 }
@@ -75,10 +75,11 @@ body{
    background-color: transparent;
 }
 #customize-pizza option{
-    background-color: transparent;
+    background-color: rgb(236, 220, 126);
+
 }
 .form-group{
-    width: 800px;
+    width: 600px;
 
 }
 .form-option{
@@ -89,7 +90,7 @@ body{
     margin-top: 50px;
 }
 #customized-pizza p{
-    font-size: 20px;
+    font-size: 15px;
     font-style: oblique;
     padding-left: 50px;
 }
