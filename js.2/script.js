@@ -69,11 +69,16 @@ function DeliveryAddress(cityName, cityAvenueName, cityStreetName, nameOfBuildin
 // User interface
 $(document).ready(function() {
   $(".submit-btn").click(function() {
-    $(".contacts").toggle(2000);
+    $(".contacts").hide(2000);
+    $(".submit-btn2").toggle(2100);
     
   });
   $(".additional-info").hide();
  
+  $(".place-order").click(function(){
+    $(".order").show();
+  });
+
   
 
   $("form#customized-pizza").submit(function(event) {
@@ -99,7 +104,7 @@ $(document).ready(function() {
     $("#pizza-topping").append("\t" + "\t" + customtopping);
     $("#final-cost").text("\t" + "\t" + newPizzaOrder.totalCost());
     
-    var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $("#pizza-size").text() + " - " + customSize + '</td><td id="crust">' + $("#pizza-crust").text() + " - " + customcrust + '</td><td id="topping">' + $("#pizza-topping").text() + " - " + customtopping + '</td><td id="final-cost">' + $("#final-cost").text()+" - "+ newPizzaOrder.totalCost() + '</td></tr>'
+    var newRow = '<tr><th scope="row">' + newPizza.orderNo + '</th><td id="size">' + $("#pizza-size").text() + " - " + customSize + '</td><td id="crust">' + $("#pizza-crust").text() + " - " + customcrust + '</td><td id="topping">' + $("#pizza-topping").text() + " - " + customtopping + '</td><td id="final-cost">' + $("#final-cost").text()+" - "+ newPizzaOrder.totalCost() + '</td></tr><br />'
 
       $("#pizza").append(newRow);
   });

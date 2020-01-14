@@ -12,6 +12,8 @@
 </head>
 <body>
 
+  <!--hero part-->
+
 <div class="container">
     <div class="jumbotron">
         <div class="hero">
@@ -24,43 +26,56 @@
     </div>
 </div>
 
+<!--End of hero-->
+
+<!--Form for pizza delivery-->
+
 <div class="container">
     <div class="jumbotron">
         <div class="contact">
             <div class="contacts">
             <div class="row">
               
-                <div class="col-md-6" id="forms">
+                <div class="col-md-6 form-group" id="forms">
                     <label for="name" >Name:</label>
-                    <input type="text" class="customer-name" id="form" placeholder="name:">
+                    <input type="text" class="customer-name form-control" id="form" placeholder="name:">
                 </div>
-                <div class="col-md-6"id="forms">
+                <div class="col-md-6 form-group"id="forms">
                     <label for="phone" >Phone No:</label>
-                    <input type="text" class="telephone" id="form" placeholder="phone no.">
+                    <input type="text" class="telephone form-control" id="form" placeholder="phone no.">
                 </div>
-                <div class="col-md-6" id="forms">
+                <div class="col-md-6 form-group" id="forms">
                     <label for="address">Address:</label>
-                    <input type="text" class="customer-address" id="form" placeholder="Address">
+                    <input type="text" class="customer-address form-control" id="form" placeholder="Address">
                 </div>
-                <div class="col-md-4" id="forms">
+                <div class="col-md-4 form-group" id="forms">
                 <label for="city">City:</label>
-                <input type="text" class="customer-city" id="form" placeholder="City">
+                <input type="text" class="customer-city form-control" id="form" placeholder="City">
             </div>
+            <button class="submit-btn btn btn-dark">Submit</button>
+            
            </div>
+          
         </div>
-            <button class="submit-btn">Submit</button>
+        <button class="submit-btn2 btn btn-dark">Change info</button>
+            </div>
+    
+<!--End of pizza delivery--> 
+
+<!--pizza delivery-->
         
-        <div class="container-fluid jumbotron" id="order-content">
-          <div class="col-md-6">
+        <div class="container-fluid " id="order-content">
             <h3 class="page-header">Order Your Pizza</h3>
+          <div class="col-md-6">
+            
             <form class="form-group" id="customized-pizza">
               <div id="form-content">
                 <div class="row ">
                   <div class="col-md-4" class="type">
                     <p> Pizza Size</p>
                   
-                  <div class="col-md-4" class="form-option">
-                     <select required class="form-control" id="size">
+                  <div class="col-md-4" >
+                     <select required class="custom-select" id="size">
                       <option></option>
                       <option value="Small">Small </option>
                       <option value="Medium">Medium </option>
@@ -72,8 +87,8 @@
                   <div class="col-md-4" class="type">
                     <p>Crust</p>
                   
-                  <div class="col-xs-6" class="form-option">
-                    <select required class="form-control" id="crust">
+                  <div class="col-xs-6">
+                    <select required class="custom-select" id="crust">
                       <option></option>
                       <option value="Crispy">Crispy </option>
                       <option value="Stuffed">Stuffed </option>
@@ -85,8 +100,8 @@
                   <div class="col-md-4" class="type">
                     <p>Topping :</p>
                   
-                  <div class="col-xs-6" class="form-option">
-                    <select required class="form-control"id="topping">
+                  <div class="col-xs-6">
+                    <select required class="custom-select" id="topping">
                       <option></option>
                       <option value="bacon">Bacon </option>
                       <option value="chicken">Chicken </option>
@@ -96,10 +111,12 @@
                    
                 </div>
               </div>
-              <button type="submit" class="btn btn-success" id="place-order">Place Order</button>
+              <button type="submit" class="btn btn-success place-order" id="place-order">Place Order</button>
             </form>
           </div>
-          
+
+  <!--End of pizza order-->
+          <div class="order">
               <table class="table">
                 <thead>
                   <tr>
@@ -118,7 +135,9 @@
                     <td id="pizza-topping"></td>
                     <td id="final-cost"></td>
                   </tr>
+                
                 </tbody>
+                <br/>
               </table>
               <div class="additional-info">
                 <h3>The total is: <span></span></h3>
@@ -127,6 +146,7 @@
               <button type="btn" class="btn btn-danger" id="reload">Refresh</button>
             </div>
           </div>
+        </div>
         </div>
     
     <script src="js.2/script.js"></script>

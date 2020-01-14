@@ -33,8 +33,11 @@ body{
 .jumbotron{
     margin-top: 20px;
 }
+.hero img{
+  width: 200px
+}
 .hero h1{
-    text-align: center;
+    text-align: right;
     padding-left:250px;
     margin-top: -100px;
 }
@@ -50,6 +53,7 @@ body{
 }
 .contacts{
     margin: 5px;
+    padding-left:35px;
 }
 #forms label{
     font-size: 24px;
@@ -61,12 +65,18 @@ body{
     height: 40px;
     display: block;
     width: 300px;
-    background-color: antiquewhite;
+    background-color: transparent;
 
 }
 .submit-btn{
-    margin-top: 100px;
-   margin-left: 400px;
+    margin-top: 60px;
+    margin-left: 340px;
+   
+}
+.submit-btn2{
+    margin-top: 60px;
+    margin-left: 340px;
+    display:none;
 }
 
 #customized-pizza select{
@@ -88,11 +98,25 @@ body{
 .table{
     width: 100%;
     margin-top: 50px;
+    
+}
+#order-content{
+  margin-top: 120px;
+  margin-right: 200px
+}
+#order-content h3{
+  text-align: center;
+  padding-right: 260px;
+  padding-top: -150px;
+}
+.type{
+  background: transparent;
 }
 #customized-pizza p{
     font-size: 15px;
     font-style: oblique;
     padding-left: 50px;
+    background: transparent
 }
 #reload{
     text-align: right;
@@ -100,4 +124,7 @@ body{
 }
 #place-order{
     margin-top: 50px;
+}
+.order{
+  display:none;
 }
